@@ -47,7 +47,7 @@ done
 ```bash
 for TWITTER_HANDLE in "ofwudan" "cobratate" "masterfulpo"; do \
 cat cdx/${TWITTER_HANDLE}-3.txt | \
-awk '{print "https://web.archive.org/web/"$1"id_/"$2}' | \
+awk '{print "https://web.archive.org/web/"$1"/"$2}' | \
 tee urims/${TWITTER_HANDLE}.txt; \
 done
 ```
