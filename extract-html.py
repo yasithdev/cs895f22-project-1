@@ -15,7 +15,7 @@ async def main():
     twitter_handle = sys.argv[1]
     start, end = sys.argv[2].split("-")
     start, end = int(start), int(end)
-    filename = os.path.join("uris", f"uri-m-{twitter_handle}.txt")
+    filename = os.path.join("urims", f"{twitter_handle}.txt")
 
     # get list of all URI-Ms from file
     with open(filename, "r") as infile:
