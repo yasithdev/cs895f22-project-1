@@ -2,8 +2,8 @@ import asyncio
 import os
 import sys
 
-from tqdm import tqdm
 from pyppeteer import launch
+from tqdm import tqdm
 
 
 async def main():
@@ -20,7 +20,7 @@ async def main():
     # get list of all URI-Ms from file
     with open(filename, "r") as infile:
         urims = list(infile.readlines())
-    
+
     # crawl URI-Ms from start index to end index
     for i in tqdm(range(start - 1, end)):
 
@@ -51,10 +51,12 @@ async def main():
             outfile.flush()
 
         try:
-            await page.screenshot({"path": f"screenshots/{twitter_handle}-{i+1}.png", 'fullPage': True})
+            await page.screenshot(
+                {"path": f"screenshots/{twitter_handle}-{i+1}.png", "fullPage": True}
+            )
         except:
             pass
-        
+
         await page.close()
 
     await browser.close()
